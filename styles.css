@@ -1,0 +1,810 @@
+/* ==== Variables / Base ==== */
+:root {
+    /* 🎨 メインカラー（25%） */
+    --tiffany-blue: #81D8D0;
+    --tiffany-light: #E6F8F6;
+
+    /* 🎨 ベースカラー（70%） */
+    --bg-white: #FFFFFF;
+    --bg-gray: #FBFBFB;
+    /* より明るく透明感のあるグレー */
+    --bg-blue-tint: #F2FAFA;
+    /* ほんのりブルーがかった白 */
+
+    /* 🎨 アクセントカラー（5%） */
+    --accent-gold: #D4AF37;
+    --accent-silver: #E0E0E0;
+    /* 薄いボーダー用 */
+
+    /* 🖋 テキストカラー */
+    --text-charcoal: #4A4A4A;
+    /* 柔らかな濃いグレー */
+    --text-light-gray: #888888;
+    --text-light: #FFFFFF;
+
+    /* フォント */
+    --font-heading: 'Noto Serif JP', '游明朝', serif;
+    /* メイン見出し */
+    --font-script: 'Pinyon Script', cursive;
+    /* 流れるような英字アクセント用 */
+    --font-body: 'Noto Sans JP', '游ゴシック', sans-serif;
+
+    --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.03);
+    /* より繊細な影 */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-charcoal);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 2;
+    /* 行間を広げてLEPIA風の余裕を */
+    letter-spacing: 0.08em;
+    /* 文字間隔も広めに */
+    -webkit-font-smoothing: antialiased;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==== Typography ==== */
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+.font-script {
+    font-family: var(--font-script);
+}
+
+/* 背景透過ユーティリティ */
+.bg-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+}
+
+/* ==== Layout ==== */
+.container {
+    max-width: 1100px;
+    /* 少し幅を狭めて上品に */
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section {
+    padding: 150px 0;
+    /* マージンをたっぷりとって抜け感を */
+    position: relative;
+}
+
+/* ==== Header ==== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 25px 0;
+    background: transparent;
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+    /* ボーダーではなく極薄い影で区切る */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--text-charcoal);
+    /* 初期はグレー */
+    letter-spacing: 0.15em;
+    transition: var(--transition);
+}
+
+.header.scrolled .logo {
+    color: var(--text-charcoal);
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav a {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    /* 初期（画像背景上）は白 */
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+}
+
+.header.scrolled .nav a {
+    color: var(--text-charcoal);
+    /* スクロール後はグレー */
+}
+
+.nav a:hover {
+    color: var(--tiffany-blue) !important;
+}
+
+/* 光沢ボタン（ジュエリー感） */
+.btn-entry-sm,
+.btn-entry-lg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #A4E8E2 0%, #81D8D0 100%);
+    color: var(--bg-white) !important;
+    border-radius: 40px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    box-shadow:
+        0 4px 15px rgba(129, 216, 208, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+}
+
+.btn-entry-sm {
+    padding: 12px 30px;
+    font-size: 0.85rem;
+}
+
+.header:not(.scrolled) .btn-entry-sm {
+    /* 画像上の時は少し白っぽく */
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+}
+
+.btn-entry-sm:hover,
+.btn-entry-lg:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(129, 216, 208, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, #B5F0EA 0%, #8FE3DB 100%);
+}
+
+/* ==== Hero ==== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* クールトーン・高輝度の写真（Lepia風） */
+    background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ティファニーブルーの淡いヴェール（透明感重視） */
+    background: linear-gradient(to right, rgba(129, 216, 208, 0.6), rgba(255, 255, 255, 0.2));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    /* LEPIAのように左寄せで上品に */
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 60px;
+    margin-top: 80px;
+}
+
+.hero-script {
+    font-size: 5rem;
+    color: var(--bg-white);
+    opacity: 0.9;
+    margin-bottom: -10px;
+    line-height: 1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--bg-white);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hero-title span {
+    display: block;
+}
+
+/* Scroll Ind */
+.scroll-indicator {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    /* 左下に配置 */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--bg-white);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 80px;
+    background: var(--bg-white);
+    margin-top: 15px;
+    margin-left: 20px;
+    animation: scrollDown 2.5s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* ==== Section Headers ==== */
+.section-header {
+    text-align: center;
+    margin-bottom: 100px;
+    /* 見出し下の余白を広めに */
+    position: relative;
+}
+
+.section-script {
+    font-size: 4rem;
+    color: rgba(129, 216, 208, 0.15);
+    /* 背景に溶け込む透かし英字 */
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: -1;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--tiffany-blue);
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-charcoal);
+    margin-bottom: 30px;
+    letter-spacing: 0.15em;
+}
+
+.section-desc {
+    font-size: 0.95rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-light-gray);
+}
+
+/* ==== Mindset Section ==== */
+.mindset {
+    background: var(--bg-white);
+}
+
+.mindset-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.mindset-card {
+    background: var(--bg-white);
+    border: 1px solid var(--accent-silver);
+    /* ティファニーブルーではなく極薄グレーで上品に */
+    padding: 60px 40px;
+    border-radius: 4px;
+    /* 角丸は最小限に */
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+}
+
+.mindset-card::before {
+    /* ホバー時に上に現れる細いティファニーブルー線 */
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tiffany-blue);
+    transform: scaleX(0);
+    transition: 0.4s ease;
+}
+
+.mindset-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-soft);
+    border-color: transparent;
+}
+
+.mindset-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mindset-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 30px;
+    fill: var(--tiffany-blue);
+}
+
+.mindset-heading {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--text-charcoal);
+    line-height: 1.6;
+}
+
+.mindset-text {
+    font-size: 0.9rem;
+    text-align: left;
+    color: var(--text-light-gray);
+}
+
+/* ==== Education Section ==== */
+.education {
+    background: var(--bg-blue-tint);
+    /* ほんのりブルーがかった白 */
+}
+
+.edu-features {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    /* 要素間の余白をさらに広く */
+}
+
+.edu-feature {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.edu-feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.edu-feature-content {
+    flex: 1;
+}
+
+.edu-feature-content h3 {
+    font-size: 1.4rem;
+    color: var(--tiffany-blue);
+    margin-bottom: 25px;
+    letter-spacing: 0.1em;
+}
+
+.edu-feature-content p {
+    color: var(--text-charcoal);
+}
+
+.edu-feature-visual {
+    flex: 1;
+    height: 400px;
+    background: var(--bg-white);
+    border-radius: 4px;
+    /* シャープな角 */
+    position: relative;
+    /* 写真を置くことを想定した薄いシャドウ */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
+}
+
+.edu-visual-gradient {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--tiffany-blue);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* ==== Story Section (Magazine Layout) ==== */
+.story {
+    background: var(--bg-white);
+    /* 背景は白に戻す */
+}
+
+.story-container {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+.story-image-wrap {
+    flex: 0 0 400px;
+    position: relative;
+}
+
+.story-image {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: var(--shadow-soft);
+}
+
+.story-image-decoration {
+    /* 写真の裏に配置する淡いティファニーブルーの四角 */
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    background: var(--tiffany-light);
+    z-index: -1;
+}
+
+.story-content {
+    flex: 1;
+}
+
+.story-title {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: var(--tiffany-blue);
+}
+
+.story-content p {
+    margin-bottom: 25px;
+    color: var(--text-charcoal);
+}
+
+.story-quote {
+    margin-top: 50px;
+    padding: 30px;
+    background: var(--bg-gray);
+    border-left: 2px solid var(--tiffany-blue);
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+    color: var(--tiffany-blue);
+    line-height: 1.8;
+}
+
+/* ==== SMSGROUP Section ==== */
+.smsgroup {
+    background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2668&auto=format&fit=crop') fixed center/cover;
+    position: relative;
+    color: var(--text-light);
+    text-align: center;
+    padding: 150px 0;
+}
+
+.smsgroup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(129, 216, 208, 0.9);
+    /* ティファニーブルーの強いオーバーレイ */
+}
+
+.smsgroup .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.sms-title {
+    font-family: var(--font-heading-en);
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+}
+
+.sms-lead {
+    font-size: 1.8rem;
+    font-family: var(--font-heading);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.sms-desc {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.2;
+}
+
+.sms-number {
+    font-size: 1.5rem;
+    font-family: var(--font-script);
+}
+
+/* ==== Environment Section ==== */
+.environment {
+    background: var(--bg-white);
+}
+
+.env-grid {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.req-table {
+    flex: 2;
+    border-top: 1px solid var(--tiffany-blue);
+}
+
+.req-table dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.req-table dt,
+.req-table dd {
+    padding: 30px 20px;
+    border-bottom: 1px solid var(--accent-silver);
+}
+
+.req-table dt {
+    width: 25%;
+    font-weight: 500;
+    color: var(--tiffany-blue);
+    font-family: var(--font-heading);
+}
+
+.req-table dd {
+    width: 75%;
+    color: var(--text-charcoal);
+}
+
+.benefits-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.benefit-box {
+    background: var(--bg-blue-tint);
+    padding: 40px 30px;
+    border-radius: 4px;
+}
+
+.benefit-box h4 {
+    font-size: 1.1rem;
+    color: var(--tiffany-blue);
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+}
+
+.benefit-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit-box li {
+    font-size: 0.85rem;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.benefit-box li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+}
+
+/* ==== Footer / CTA ==== */
+.footer {
+    padding: 120px 0 60px;
+    text-align: center;
+    background: var(--bg-white);
+}
+
+.footer-cta {
+    background: var(--bg-blue-tint);
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto 80px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--tiffany-blue);
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--tiffany-blue);
+}
+
+.footer-desc {
+    margin-bottom: 40px;
+    color: var(--text-charcoal);
+}
+
+.btn-entry-lg {
+    padding: 20px 80px;
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.copy {
+    font-size: 0.75rem;
+    font-family: var(--font-heading-en);
+    color: var(--text-light-gray);
+    letter-spacing: 0.2em;
+}
+
+/* ==== Animations ==== */
+.reveal {
+    opacity: 0;
+}
+
+.fade-up {
+    transform: translateY(50px);
+}
+
+.fade-right {
+    transform: translateX(-50px);
+}
+
+.fade-left {
+    transform: translateX(50px);
+}
+
+.revealed {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+    transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.delay-1 {
+    transition-delay: 0.15s !important;
+}
+
+.delay-2 {
+    transition-delay: 0.3s !important;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 0 20px;
+    }
+
+    .nav ul {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 0 20px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .hero-script {
+        font-size: 3.5rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .scroll-indicator {
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+    }
+
+    .scroll-indicator .line {
+        margin-left: 0;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .mindset-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-feature,
+    .edu-feature.reverse,
+    .story-container,
+    .env-grid {
+        flex-direction: column;
+    }
+
+    .story-image-wrap {
+        flex: auto;
+        width: 100%;
+    }
+
+    .req-table dt,
+    .req-table dd {
+        width: 100%;
+        border-bottom: none;
+    }
+
+    .req-table dt {
+        padding-bottom: 5px;
+    }
+
+    .req-table {
+        border-bottom: 1px solid var(--accent-silver);
+        margin-bottom: 40px;
+    }
+
+    .section-script {
+        font-size: 2.5rem;
+        top: -20px;
+    }
+}
