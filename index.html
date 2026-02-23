@@ -4,261 +4,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emma eyelash | Recruit</title>
+    <title>emma eyelash | アイリスト求人</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Pinyon Script for decorative english, Noto Serif/Sans for Japanese -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Global: Floating CTA -->
+    <div class="floating-cta" id="floatingCTA">
+        <a href="#entry" class="float-btn float-line">
+            <svg viewBox="0 0 24 24" class="line-icon" width="20" height="20" style="margin-right:4px;">
+                <path fill="currentColor"
+                    d="M20.5 8.5c0-3.6-3.8-6.5-8.5-6.5S3.5 4.9 3.5 8.5c0 3.2 2.9 5.9 7 6.4.3.1.7.3.6.7l-.3 1.5c-.1.2 0 .4.2.5.1.1.3.1.4.1.3 0 1.9-.9 4.2-2.3 2.9-1.8 4.9-4.3 4.9-6.9z" />
+            </svg>
+            LINE相談
+        </a>
+        <a href="#entry" class="float-btn float-entry">
+            応募する
+        </a>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
-            <div class="logo">emma eyelash</div>
+            <a href="#" class="logo"><img src="assets/logo.jpg" alt="emma eyelash"></a>
             <nav class="nav">
                 <ul>
-                    <li><a href="#mindset">MINDSET</a></li>
-                    <li><a href="#education">EDUCATION</a></li>
-                    <li><a href="#smsgroup">GROUP</a></li>
-                    <li><a href="#environment">REQUIREMENTS</a></li>
-                    <li><a href="#entry" class="btn-entry-sm">エントリー・見学</a></li>
+                    <li><a href="#hook">お悩み</a></li>
+                    <li><a href="#usp">強み</a></li>
+                    <li><a href="#story">ストーリー</a></li>
+                    <li><a href="#career">キャリア</a></li>
+                    <li><a href="#requirements">募集要項</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero reveal-hero">
-        <div class="hero-content">
-            <div class="hero-script font-script fade-in-up delay-1">Recruit</div>
-            <h1 class="hero-title font-serif">
-                <span class="fade-in-up delay-2">未来は自分たちで創る。</span>
-                <span class="fade-in-up delay-3">挑戦と成長で、</span>
-                <span class="fade-in-up delay-3">豊かに生き抜くアイリストへ。</span>
-            </h1>
+    <!-- ① FV -->
+    <section class="fv">
+        <div class="fv-bg">
+            <!-- 実際のサロン写真に差し替え可能（透明感を出すために白レイヤーを被せる） -->
+            <img src="assets/interior_1.jpg"
+                onerror="this.src='https://images.unsplash.com/photo-1516975080661-46bfa2c1f93f?q=80&w=1200'"
+                alt="emma eyelash" class="fv-img">
+            <div class="fv-overlay"></div>
         </div>
-        <div class="scroll-indicator fade-in delay-4">
-            <span>SCROLL</span>
-            <div class="line"></div>
+        <div class="fv-content">
+            <p class="fv-sub font-serif">emma eyelash｜アイリスト募集中<br>（経験者優遇・未経験歓迎）</p>
+            <h1 class="fv-catch font-serif">あなたの技術と想いが、<br>正しく報われる場所へ。</h1>
+
+            <div class="trust-badges">
+                <div class="badge">社会保険完備</div>
+                <div class="badge">週休2日</div>
+                <div class="badge">月給25万円〜</div>
+            </div>
+
+            <a href="#entry" class="cta-primary pulse-btn">まずは30秒で簡単エントリー</a>
         </div>
     </section>
 
-    <!-- Mindset Section -->
-    <section id="mindset" class="section mindset">
+    <div class="transition-copy text-center bg-white">
+        <p>アイリストとして働く"当たり前"に、<br class="sp-only">少し疲れていませんか？</p>
+        <div class="arrow-down">↓</div>
+    </div>
+
+    <!-- ② 悩み共感 (Hook) -->
+    <section id="hook" class="section hook bg-white">
         <div class="container">
-            <div class="section-header reveal fade-up">
-                <div class="section-script font-script">Our Mindset</div>
-                <h2 class="section-title font-serif">OUR MINDSET</h2>
-                <p class="section-subtitle font-serif">大切にしている3つの力</p>
-                <p class="section-desc">
-                    「顧客の問題解決を約束し、選ばれる存在になる。」それが、私たちzezeグループのビジョンです。<br>お客様からも、そしてスタッフからも必要とされる「人間力」と「技術力」を、チーム全体で育てていきます。
-                </p>
+            <div class="hook-card">
+                <h2 class="hook-title font-serif text-center">こんなお悩み、ありませんか？</h2>
+                <ul class="hook-list">
+                    <li><span class="check">✔︎</span>頑張っても評価基準が曖昧で、お給料に反映されない…</li>
+                    <li><span class="check">✔︎</span>「見て学べ」と言われるだけで、正解がわからず不安…</li>
+                    <li><span class="check">✔︎</span>陰口や人間関係のストレスなく、目の前のお客様に集中したい…</li>
+                    <li><span class="check">✔︎</span>毎日の営業後レッスンが体力的に大変。プライベートの時間も大切にしたい…</li>
+                    <li><span class="check">✔︎</span>将来、結婚・出産してもアイリストを続けられるか心配…</li>
+                </ul>
+                <p class="hook-lead text-center">一つでも当てはまったあなたへ。<br>emma eyelashには、その悩みを"仕組み"で解決した環境があります。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="transition-copy text-center bg-white">
+        <p>その悩み、emma eyelashではどう解決しているのか。<br class="sp-only">3つのポイントでご紹介します。</p>
+        <div class="arrow-down">↓</div>
+    </div>
+
+    <!-- ③ USP (3つの強み) -->
+    <section id="usp" class="section usp">
+        <!-- 強み1 -->
+        <div class="usp-block usp-white">
+            <div class="container">
+                <div class="usp-content">
+                    <span class="usp-num font-script">Reason 01</span>
+                    <h3 class="usp-title font-serif">全員が確実に成長できる<br>「仕組み化された教育」</h3>
+                    <p class="usp-desc">
+                        「見て学べ」の文化は一切ありません。体系化されたカリキュラムと段階別テストを用意。未経験からでも迷わず着実にスキルアップでき、テスト合格ごとに昇給する透明な評価システムです。</p>
+                    <div class="usp-data">
+                        <span class="point">未経験から最短<b>数ヶ月</b>でデビュー</span>
+                        <span class="point">カリキュラム全<b>5ステップ</b></span>
+                    </div>
+                </div>
+                <div class="usp-img-wrap">
+                    <img src="assets/skill_map.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=800'"
+                        alt="スキルマップ" class="usp-img shadow">
+                </div>
+            </div>
+        </div>
+        <!-- 強み2 -->
+        <div class="usp-block usp-tiffany">
+            <div class="container reverse">
+                <div class="usp-content">
+                    <span class="usp-num font-script">Reason 02</span>
+                    <h3 class="usp-title font-serif">頑張りが「見える化」される<br>給与・評価制度</h3>
+                    <p class="usp-desc">評価基準が曖昧で給与が上がらない不満を解消。歩合制度や役職手当など、あなたの頑張りを正当に評価し、明確な数字として還元します。</p>
+                    <div class="usp-salary-model shadow card-radius">
+                        <h4 class="font-serif text-center" style="margin-bottom: 15px; color: var(--tiffany-blue);">
+                            給与モデルイメージ</h4>
+                        <div class="model-row">
+                            <span class="label">経験者入社</span>
+                            <span class="value">月給 250,000円〜 + 歩合</span>
+                        </div>
+                        <div class="model-arrow text-center" style="margin: 10px 0; color: #ccc;">▼ 1年後 ▼</div>
+                        <div class="model-row highlight"
+                            style="background: var(--tiffany-light); padding: 10px; border-radius: 4px;">
+                            <span class="label">月収イメージ</span>
+                            <span class="value"
+                                style="font-weight: bold; font-size: 1.2rem; color: var(--tiffany-blue);">350,000円</span>
+                        </div>
+                        <p class="note text-right" style="font-size: 0.8rem; margin-top: 10px; color: #888;">※役職手当あり /
+                            業績賞与年2回</p>
+                    </div>
+                </div>
+                <div class="usp-img-wrap">
+                    <!-- 内装写真（ダミー対応） -->
+                    <img src="assets/interior_2.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800'"
+                        alt="サロン内装" class="usp-img shadow">
+                </div>
+            </div>
+        </div>
+        <!-- 強み3 -->
+        <div class="usp-block usp-white">
+            <div class="container">
+                <div class="usp-content">
+                    <span class="usp-num font-script">Reason 03</span>
+                    <h3 class="usp-title font-serif">医療・福祉「SMS GROUP」の<br>バックアップによる長期安心</h3>
+                    <p class="usp-desc">emma eyelashは、西日本を中心に116の事業を展開する医療・福祉「SMS
+                        GROUP」の美容部門（19店舗運営）です。大手グループならではの経営基盤で、社会保険完備、産休育休制度、社員寮、住宅手当など、将来のライフステージの変化にも柔軟に対応できる環境を整えています。
+                    </p>
+                </div>
+                <div class="usp-img-wrap">
+                    <img src="assets/exterior.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800'"
+                        alt="サロン外観" class="usp-img shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="transition-copy text-center bg-white">
+        <p>仕組みだけではありません。<br class="sp-only">一緒に働く"仲間"もemma eyelashの魅力です。</p>
+        <div class="arrow-down">↓</div>
+    </div>
+
+    <!-- ④ Staff Story -->
+    <section id="story" class="section story bg-white">
+        <div class="container">
+            <h2 class="section-title text-center font-serif">Staff Story<br><span class="section-sub"
+                    style="font-size: 1rem; color: #888; font-family: var(--font-body);">先輩たちのリアルな声</span></h2>
+
+            <div class="story-carousel">
+                <!-- Story A -->
+                <div class="story-card shadow">
+                    <div class="story-head">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                            alt="スタッフA" class="staff-img">
+                        <div class="staff-info">
+                            <span class="staff-tag">経験者入社</span>
+                            <h4 class="staff-name font-serif">頑張りが給与に<br>直結して驚きました</h4>
+                        </div>
+                    </div>
+                    <div class="story-body" style="position:relative;">
+                        <span class="quote-mark font-script"
+                            style="position:absolute; top:-20px; left:-10px; font-size:4rem; color:var(--tiffany-light); z-index:-1;">"</span>
+                        <p>前職では評価が不透明で悩んでいましたが、emma eyelashでは明確な基準と歩合で正しく評価されます。「見て学べ」ではなく、しっかりした研修制度があるのも安心でした。</p>
+                    </div>
+                </div>
+                <!-- Story B -->
+                <div class="story-card shadow">
+                    <div class="story-head">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=200&auto=format&fit=crop"
+                            alt="スタッフB" class="staff-img">
+                        <div class="staff-info">
+                            <span class="staff-tag">未経験入社</span>
+                            <h4 class="staff-name font-serif">プライベートと仕事の<br>両立が叶う環境</h4>
+                        </div>
+                    </div>
+                    <div class="story-body" style="position:relative;">
+                        <span class="quote-mark font-script"
+                            style="position:absolute; top:-20px; left:-10px; font-size:4rem; color:var(--tiffany-light); z-index:-1;">"</span>
+                        <p>美容師免許はありましたが未経験からのスタート。人間関係が良く、質問しやすい環境です。営業内レッスンがメインなので、夜遅くまで残ることもなくプライベートも充実しています。</p>
+                    </div>
+                </div>
+                <!-- Story C -->
+                <div class="story-card shadow">
+                    <div class="story-head">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop"
+                            alt="スタッフC" class="staff-img">
+                        <div class="staff-info">
+                            <span class="staff-tag">ママアイリスト</span>
+                            <h4 class="staff-name font-serif">産休・育休を経ても<br>戻れる環境があります</h4>
+                        </div>
+                    </div>
+                    <div class="story-body" style="position:relative;">
+                        <span class="quote-mark font-script"
+                            style="position:absolute; top:-20px; left:-10px; font-size:4rem; color:var(--tiffany-light); z-index:-1;">"</span>
+                        <p>子育て中ですが、時短勤務やシフト調整に柔軟に対応してもらえます。SMSグループの基盤があるからこそ、ライフステージが変わっても長く安心して働けます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="transition-copy text-center bg-white">
+        <p>あなたも、このチームの一員になりませんか？</p>
+        <div class="arrow-down">↓</div>
+    </div>
+
+    <!-- ⑤ Career Path -->
+    <section id="career" class="section career" style="background-color: var(--tiffany-light);">
+        <div class="container">
+            <h2 class="section-title text-center font-serif">Career Path<br><span class="section-sub"
+                    style="font-size: 1rem; color: #888; font-family: var(--font-body);">技術だけじゃない。"経営"も学べるキャリアパス</span>
+            </h2>
+            <p class="text-center" style="margin-bottom: 40px; line-height: 1.8;">
+                アイリストとしての技術向上はもちろん、将来の独立やステップアップを見据え、<br
+                    class="pc-only">マネジメントや集客・経営ノウハウも学べる環境です。<br>年次に関係なくチャレンジできる「プロジェクトチーム制度」も完備。</p>
+
+            <div class="career-scroll-wrap">
+                <div class="career-steps">
+                    <!-- Steps with Gradients -->
+                    <div class="step-item step-1">
+                        <div class="step-head">Step 1</div>
+                        <div class="step-body font-serif">アイリスト<br><span class="skill">技術習得・接客基礎</span></div>
+                    </div>
+                    <div class="step-item step-2">
+                        <div class="step-head">Step 2</div>
+                        <div class="step-body font-serif">リーダー<br><span class="skill">後輩育成・チーム運営</span></div>
+                    </div>
+                    <div class="step-item step-3">
+                        <div class="step-head">Step 3</div>
+                        <div class="step-body font-serif">副店長/店長<br><span class="skill">店舗マネジメント・店舗集客</span></div>
+                    </div>
+                    <div class="step-item step-4">
+                        <div class="step-head">Step 4</div>
+                        <div class="step-body font-serif">マネージャー<br><span class="skill">エリア統括・経営戦略</span></div>
+                    </div>
+                    <div class="step-item step-5">
+                        <div class="step-head border-only">Next</div>
+                        <div class="step-body font-serif">独立・FC<br><span class="skill">zezeG独立支援制度</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ Requirements -->
+    <section id="requirements" class="section requirements bg-white">
+        <div class="container">
+            <h2 class="section-title text-center font-serif">募集要項</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-target="tab-employee">正社員</button>
+                <button class="tab-btn" data-target="tab-contract">業務委託</button>
             </div>
 
-            <div class="mindset-grid">
-                <!-- 01 -->
-                <div class="mindset-card reveal fade-up">
-                    <svg class="mindset-icon" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zm0 10l-10-5v10l10 5 10-5v-10l-10 5z" />
+            <div class="tab-content active" id="tab-employee">
+                <table class="req-table">
+                    <tr>
+                        <th>募集職種</th>
+                        <td>アイリスト（経験者・未経験者）</td>
+                    </tr>
+                    <tr>
+                        <th>雇用形態</th>
+                        <td>正社員</td>
+                    </tr>
+                    <tr>
+                        <th>給与</th>
+                        <td class="salary-text">経験者：月給 <span class="large">250,000</span>円〜<br>未経験：月給 <span
+                                class="large">200,000</span>円〜<br>※試用期間あり</td>
+                    </tr>
+                    <tr>
+                        <th>勤務時間</th>
+                        <td>9:00〜18:00（休憩60分）<br>※早上がり・遅出勤など柔軟なシフト相談可</td>
+                    </tr>
+                    <tr>
+                        <th>休日</th>
+                        <td>週休2日制（月8日休み）/ 有給休暇 / リフレッシュ休暇<br>※土日祝休みOK</td>
+                    </tr>
+                    <tr>
+                        <th>福利厚生</th>
+                        <td>社会保険完備 / 住宅手当 / 社員寮 / 健康診断 / 退職金制度 / 賞与年2回</td>
+                    </tr>
+                    <tr>
+                        <th>勤務地</th>
+                        <td>emma eyelash 各店舗<br>※全店舗、最寄り駅から<b>徒歩3分以内</b></td>
+                    </tr>
+                    <tr>
+                        <th>応募資格</th>
+                        <td>美容師免許保有（取得見込み可）/ 年齢不問</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tab-content" id="tab-contract">
+                <table class="req-table">
+                    <tr>
+                        <th>募集職種</th>
+                        <td>アイリスト</td>
+                    </tr>
+                    <tr>
+                        <th>雇用形態</th>
+                        <td>業務委託</td>
+                    </tr>
+                    <tr>
+                        <th>給与（歩合）</th>
+                        <td class="salary-text">フリー：<span class="large">40</span>%<br>指名：<span
+                                class="large">50〜70</span>%</td>
+                    </tr>
+                    <tr>
+                        <th>勤務時間</th>
+                        <td>自由出勤制（ご自身のライフスタイルに合わせて働けます）</td>
+                    </tr>
+                    <tr>
+                        <th>休日</th>
+                        <td>自由設定</td>
+                    </tr>
+                    <tr>
+                        <th>勤務地</th>
+                        <td>emma eyelash 各店舗<br>※全店舗、最寄り駅から<b>徒歩3分以内</b></td>
+                    </tr>
+                    <tr>
+                        <th>応募資格</th>
+                        <td>美容師免許保有 / サロンワーク経験者</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑦ FAQ (Accordion) -->
+    <section id="faq" class="section faq bg-white">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title text-center font-serif">よくあるご質問</h2>
+            <div class="accordion">
+                <div class="acc-item">
+                    <button class="acc-head">Q. 未経験でも応募できますか？ <span class="icon">+</span></button>
+                    <div class="acc-body">
+                        <p>A. 美容師免許があれば未経験でも大歓迎です。体系的なカリキュラムで、基礎からしっかり育成しますのでご安心ください。</p>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <button class="acc-head">Q. 見学や体験入店はできますか？ <span class="icon">+</span></button>
+                    <div class="acc-body">
+                        <p>A. 可能です。サロンの雰囲気やスタッフの働く様子をぜひ見にいらしてください。まずはLINEからお気軽にご相談ください。</p>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <button class="acc-head">Q. 残業やレッスン時間はどのくらいですか？ <span class="icon">+</span></button>
+                    <div class="acc-body">
+                        <p>A. レッスンは基本的に営業時間内に行う仕組みを整えています。無駄な居残り練習などはないため、プライベートとの両立がしやすい環境です。</p>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <button class="acc-head">Q. 子育て中でも働けますか？ <span class="icon">+</span></button>
+                    <div class="acc-body">
+                        <p>A. 時短勤務やシフト調整も柔軟に対応可能です。実際に産休・育休を取得し、復帰して活躍しているママスタッフも在籍しています。</p>
+                    </div>
+                </div>
+                <div class="acc-item">
+                    <button class="acc-head">Q. 他県からの応募でも大丈夫ですか？ <span class="icon">+</span></button>
+                    <div class="acc-body">
+                        <p>A. はい、大歓迎です。社員寮や住宅手当などのサポート制度を完備しておりますので、遠方からでも安心してスタートできます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑧ Final CTA -->
+    <section id="entry" class="section final-cta">
+        <div class="container text-center">
+            <h2 class="final-title font-serif">あなたの"次のステージ"、<br>ここから始めませんか？</h2>
+
+            <div class="cta-box shadow">
+                <a href="#" class="btn-main-cta">
+                    <svg viewBox="0 0 24 24" class="line-icon" width="24" height="24" style="margin-right:8px;">
+                        <path fill="currentColor"
+                            d="M20.5 8.5c0-3.6-3.8-6.5-8.5-6.5S3.5 4.9 3.5 8.5c0 3.2 2.9 5.9 7 6.4.3.1.7.3.6.7l-.3 1.5c-.1.2 0 .4.2.5.1.1.3.1.4.1.3 0 1.9-.9 4.2-2.3 2.9-1.8 4.9-4.3 4.9-6.9z" />
                     </svg>
-                    <h3 class="mindset-heading font-serif">感動を提供する<br>「プロフェッショナル力」</h3>
-                    <p class="mindset-text">
-                        ただ数をこなす施術ではなく「期待を超える」高付加価値な提案です。お客様の真の悩みに寄り添い、ビューティパートナーとして長く選ばれる本物の技術と提案力を身につけます。
-                    </p>
-                </div>
-                <!-- 02 -->
-                <div class="mindset-card reveal fade-up delay-1">
-                    <svg class="mindset-icon" viewBox="0 0 24 24">
-                        <path
-                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                    <h3 class="mindset-heading font-serif">全員で成果を出す<br>「チーム力」</h3>
-                    <p class="mindset-text">
-                        「陰口・悪口は絶対に禁止」。誰かが困っていればチームで助け合い、他者の成長を妨げる行為は許しません。誰もが安心して働ける抜群のチームワークをお約束します。
-                    </p>
-                </div>
-                <!-- 03 -->
-                <div class="mindset-card reveal fade-up delay-2">
-                    <svg class="mindset-icon" viewBox="0 0 24 24">
-                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                    </svg>
-                    <h3 class="mindset-heading font-serif">現状維持を選ばない<br>「挑戦力」</h3>
-                    <p class="mindset-text">
-                        「できること」の範囲に留まるのではなく、常に「やりたいこと」へ向かって少しだけ背伸びをする。失敗を恐れず挑戦の道を楽しむことで、自分自身の可能性の蓋を外します。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section education">
-        <div class="container">
-            <div class="section-header reveal fade-up">
-                <div class="section-script font-script">Education</div>
-                <h2 class="section-title font-serif">EDUCATION SYSTEM</h2>
-                <p class="section-subtitle font-serif">成長を約束する教育の仕組み</p>
-                <p class="section-desc">「見て盗め」「とりあえずやってみて」といった曖昧な教育はありません。<br>確実なスキルアップをサポートする、構造化されたプログラムを用意しています。</p>
-            </div>
-
-            <div class="edu-features">
-                <div class="edu-feature reveal fade-up">
-                    <div class="edu-feature-content">
-                        <h3 class="font-serif">迷わない「スキルマップ」</h3>
-                        <p>「いつまでに・何を・どのレベルまで習得すればいいか」が一目でわかる独自のスキルマップを完備。次の目標が明確だからこそ、モチベーションを落とさず着実にデビュー・キャリアアップへと進めます。
-                        </p>
-                    </div>
-                    <div class="edu-feature-visual">
-                        <div class="edu-visual-gradient"></div>
-                        <img src="https://images.unsplash.com/photo-1516975080661-46bfa2c1f93f?q=80&w=800&auto=format&fit=crop"
-                            style="width:100%; height:100%; object-fit:cover; border-radius:4px;" alt="Skill Map">
-                    </div>
-                </div>
-
-                <div class="edu-feature reverse reveal fade-up">
-                    <div class="edu-feature-content">
-                        <h3 class="font-serif">答えを引き出す「コーチング面談」</h3>
-                        <p>上司からの「ティーチング（教え込み）」ではなく、あなた自身の想いや考えを8割話してもらう「コーチング（引き出し）」主体の1on1面談を実施。自発的な成長を全力でサポートします。</p>
-                    </div>
-                    <div class="edu-feature-visual">
-                        <div class="edu-visual-gradient"></div>
-                        <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=800&auto=format&fit=crop"
-                            style="width:100%; height:100%; object-fit:cover; border-radius:4px;" alt="Coaching">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story Section -->
-    <section class="section story">
-        <div class="container">
-            <div class="story-container reveal fade-up">
-                <div class="story-image-wrap">
-                    <div class="story-image-decoration"></div>
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop"
-                        alt="スタッフ紹介" class="story-image">
-                </div>
-                <div class="story-content">
-                    <div class="section-script font-script"
-                        style="position:static; transform:none; color:var(--tiffany-blue); opacity:0.5; margin-bottom:10px; font-size:3rem; text-align:left;">
-                        Staff Story</div>
-                    <h3 class="story-title font-serif">入社2年目の大抜擢。<br>「私には難しいかも…」からの挑戦</h3>
-
-                    <p>当社には、年齢や役職に関係なく活躍できる「プロジェクトチーム制度」があります。ある新卒2年目のスタッフは、全社の接客・提案力を高める「カウンセリング向上チーム」にリーダーとして大抜擢されました。
-                    </p>
-                    <p>当初は「先輩たちもいる中で、私には難しいかも…」と不安を隠せませんでした。しかし、彼女は「挑戦」を選びました。そこから1年間、トークスクリプトの作成やロープレ研修の企画・運営に奔走。</p>
-                    <p>社歴の枠を超えて先輩や後輩を巻き込みながら教育に携わり、全スタッフのカウンセリング力を劇的に底上げし、チームの成長に大きく貢献したのです。</p>
-
-                    <div class="story-quote">
-                        「自分の可能性に蓋をせず、自分が自分を信じきる」。<br>
-                        emma eyelashには、想像以上の成長を手に入れられる環境が待っています。
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SMSGROUP Corporate Section -->
-    <section id="smsgroup" class="section smsgroup reveal fade-up">
-        <div class="container">
-            <div class="sms-title">SMS GROUP</div>
-            <h2 class="sms-lead">圧倒的な安心基盤と、<br>終わらない挑戦。</h2>
-            <p class="sms-desc">
-                「美容師・アイリストは長く働けない」という業界の常識を覆すため、<br>
-                私たちは四国最大級の医療・福祉「SMSグループ」の基盤を持っています。<br><br>
-                西日本を中心に美容、医療、飲食、介護、運送、保育など<br>
-                <span class="sms-number">116</span>の事業を展開し、美容部門だけでも<br>
-                <span class="sms-number">19</span>の店舗を運営しています。<br><br>
-                安定した経営基盤があるからこそ、大胆な挑戦ができる。<br>
-                これからも挑戦と成長で、共に新しい未来を作っていきませんか。
-            </p>
-        </div>
-    </section>
-
-    <!-- Environment Section -->
-    <section id="environment" class="section environment">
-        <div class="container">
-            <div class="section-header reveal fade-up">
-                <div class="section-script font-script">Requirements</div>
-                <h2 class="section-title font-serif">ENVIRONMENT & REQUIREMENTS</h2>
-                <p class="section-subtitle font-serif">募集要項と働く環境</p>
-                <p class="section-desc">長く安心して輝き続けるための、圧倒的な福利厚生をご用意しています。</p>
-            </div>
-
-            <div class="env-grid reveal fade-up">
-                <div class="req-table">
-                    <dl>
-                        <dt>職種</dt>
-                        <dd>アイリスト（未経験者・経験者ともに歓迎）</dd>
-
-                        <dt>給与</dt>
-                        <dd>
-                            未経験者：月給 217,000円〜<br>
-                            経験者（アイリストスキルのある方）：月給 250,000円〜<br>
-                            <span
-                                style="font-size:0.8rem; color:#999; display:block; margin-top:5px;">※評価基準が透明なため、スキル向上が給与やポジションに直結します。</span>
-                        </dd>
-
-                        <dt>勤務時間</dt>
-                        <dd>
-                            9:00〜18:00<br>
-                            <span
-                                style="font-size:0.8rem; color:#999; display:block; margin-top:5px;">チーム全体で「タイム意識」を高く持ち、時間内で最大の成果を出す環境です。</span>
-                        </dd>
-
-                        <dt>休日・休暇</dt>
-                        <dd>月8日休み</dd>
-
-                        <dt>勤務地</dt>
-                        <dd>emma eyelash 各店舗</dd>
-                    </dl>
-                </div>
-
-                <div class="benefits-sidebar">
-                    <div class="benefit-box">
-                        <h4 class="font-serif">医療・福祉グループの特権</h4>
-                        <ul>
-                            <li>医療費補助（グループ病院での割引）</li>
-                            <li>介護費補助（グループ介護施設での割引）</li>
-                            <li>託児保育施設の設置（0～6歳対象）</li>
-                            <li>健康診断（年1回）／ 予防接種の費用補助</li>
-                            <li>遺族年金</li>
-                        </ul>
-                    </div>
-                    <div class="benefit-box">
-                        <h4 class="font-serif">生活・キャリア支援</h4>
-                        <ul>
-                            <li>社会保険完備</li>
-                            <li>社宅・寮の提供（会社所有マンション完備）</li>
-                            <li>確定拠出年金制度</li>
-                            <li>独立支援制度</li>
-                            <li>各種割引制度（提携美容クリニック等割引）</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / CTA -->
-    <footer id="entry" class="footer">
-        <div class="container reveal fade-up">
-            <div class="footer-cta">
-                <h2 class="footer-title font-serif">あなたにお会いできるのを<br>楽しみにしています。</h2>
-                <p class="footer-desc">サロン見学だけでも大歓迎です。お気軽にお問い合わせください。</p>
-                <a href="#" class="btn-entry-lg">
-                    エントリー・見学はこちら
+                    まずはLINEで気軽に相談する
                 </a>
+                <p class="cta-note"><small>営業時間外でもOK。24時間以内にお返事します。</small></p>
+
+                <a href="#" class="btn-sub-cta">
+                    正式に応募する
+                </a>
+
+                <p class="cta-note-bottom text-center">※見学・体験入店も歓迎いたします。</p>
+
+                <div class="tel-cta">
+                    <p>お急ぎの方はこちら</p>
+                    <a href="tel:0000000000" class="tel-link font-serif">☎ 00-0000-0000</a>
+                </div>
             </div>
-            <div class="copy">
-                &copy; emma eyelash All rights reserved.
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-white">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <img src="assets/logo.jpg" alt="emma eyelash" style="width: 80px; height: 80px; border-radius: 50%;">
             </div>
+            <p class="copy">&copy; emma eyelash All rights reserved.</p>
         </div>
     </footer>
 
